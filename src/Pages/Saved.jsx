@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MovieContext } from "../Context/MovieContext";
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../Components/MovieCard";
 
 const Saved = () => {
   const { savedMovies } = useContext(MovieContext);

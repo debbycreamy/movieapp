@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../Components/MovieCard";
 
 const API_KEY = "b88a883d"; 
 const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
