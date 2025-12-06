@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
+import "./PageBg.css";
 
 const API = "https://www.omdbapi.com/?apikey=b88a883d";
 
@@ -16,7 +17,6 @@ const MovieDetail = () => {
       const data = await res.json();
       setMovie(data);
 
-      
       findTrailer(data.Title);
     };
 
@@ -42,7 +42,7 @@ const MovieDetail = () => {
   if (!movie) return <h2 className="p-6">Loading...</h2>;
 
   return (
-    <div className="p-6 flex flex-col md:flex-row gap-6">
+    <div className="page-bg p-6 flex flex-col md:flex-row gap-6">
       <img
         src={movie.Poster}
         alt={movie.Title}
@@ -57,9 +57,6 @@ const MovieDetail = () => {
         <p>🎞 Genre: {movie.Genre}</p>
         <p>📅 Year: {movie.Year}</p>
 
-       
-
-       
         <div className="mt-6">
           <h2 className="text-xl font-bold dark:text-white mb-2">Trailer</h2>
 

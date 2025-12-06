@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./LandingPage.css";
 
 const Landing = () => {
   const settings = {
@@ -15,8 +16,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center bg-gray-100 dark:bg-gray-900">
-     
+    <div className="landing-page-bg h-screen flex flex-col justify-center">
       <div className="text-center px-6 mb-10">
         <h1 className="text-6xl font-extrabold dark:text-white">
           🎬 Movie Explorer
@@ -26,13 +26,13 @@ const Landing = () => {
           cinema.
         </p>
 
-        <a
-          href="/home"
-          className="inline-block mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg 
+        <button
+          className="inline-block mt-8 px-8 py-3 bg-blue-600  rounded-lg 
           hover:bg-blue-700 transition text-lg shadow-lg"
+          onClick={() => (window.location.href = "/home")}
         >
           Get Started →
-        </a>
+        </button>
       </div>
 
       <div className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-xl">

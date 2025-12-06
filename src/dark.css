@@ -1,0 +1,42 @@
+/* Removed default background override so Tailwind bg-white can take effect */
+
+html.dark,
+html.dark body {
+  background:  #1e293b !important;
+  color: #fafafa !important;
+}
+
+html.dark .dark-bg,
+html.dark .min-h-screen,
+html.dark .bg-gray-50 {
+  background: #18181b !important;
+  color: #fafafa !important;
+}
+
+html.dark .dark-bg,
+html.dark .min-h-screen,
+html.dark .bg-gray-50 {
+  background: #18181b !important;
+  color: #fafafa !important;
+}
+
+html.dark .dark-text,
+html.dark .text-gray-800,
+html.dark .text-gray-700 {
+  color: #fafafa !important;
+}
+
+.theme-toggle-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: #e5e7eb;
+  color: #18181b;
+  border: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.theme-toggle-btn.dark {
+  background: #27272a;
+  color: #fafafa;
+  box-shadow: 0 0 0 2px #18181b;
+}

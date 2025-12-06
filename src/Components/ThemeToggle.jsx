@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import "../dark.css";
+import { MdLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 
 const ThemeToggle = () => {
   const [dark, setDark] = useState(() => {
-    
     if (typeof window !== "undefined") {
       return (
         localStorage.getItem("theme") === "dark" ||
@@ -13,7 +15,6 @@ const ThemeToggle = () => {
     return false;
   });
 
- 
   useEffect(() => {
     const root = document.documentElement;
     if (dark) {
@@ -30,9 +31,9 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="px-3 py-1 bg-gray-300 dark:bg-gray-700 rounded text-gray-800 dark:text-white"
+      className={`theme-toggle-btn${dark ? " dark" : ""}`}
     >
-      {dark ? "Light Mode" : "Dark Mode"}
+      {dark ? <MdLightMode /> : <MdDarkMode />}
     </button>
   );
 };

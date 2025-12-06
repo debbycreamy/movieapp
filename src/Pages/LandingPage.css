@@ -1,0 +1,13 @@
+.landing-page-bg {
+  background: #fff !important;
+  color: #111 !important;
+}
+
+.landing-page-bg * {
+  color: #111 !important;
+}
+
+html.dark .landing-page-bg {
+  background: #1e293b !important; 
+  color: #fafafa !important;
+}

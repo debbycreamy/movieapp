@@ -1,0 +1,23 @@
+.page-bg {
+  background: #fff !important;
+  /* color: #111 !important; */
+}
+
+.page-bg * {
+  color: #111 !important;
+}
+
+html.dark .page-bg {
+  background: #1e293b !important;
+  color: #fafafa !important;
+ 
+}
+
+html.dark .page-bg * {
+  /* background: transparent !important; */
+  color: #fafafa !important;
+}
+
+html.dark .page-bg * {
+  color: #fafafa !important;
+}

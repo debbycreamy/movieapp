@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
 import MovieCard from "../Components/MovieCard";
+import "./PageBg.css";
 
-const API_KEY = "b88a883d"; 
+const API_KEY = "b88a883d";
 const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
 const Home = () => {
-  const [search, setSearch] = useState("batman");
+ 
+  const [search, setSearch] = useState(() => {
+    return localStorage.getItem("lastSearch") || "batman";
+  });
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  
   const fetchMovies = async () => {
     setLoading(true);
     try {
@@ -28,14 +33,20 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="p-6">
+    <div className="page-bg p-6">
       <div className="flex items-center gap-3 mb-6">
         <input
           type="text"
           placeholder="Search movies..."
           className="border p-2 rounded w-full dark:bg-gray-700 dark:text-white"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            localStorage.setItem("lastSearch", e.target.value);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") fetchMovies();
+          }}
         />
 
         <button
